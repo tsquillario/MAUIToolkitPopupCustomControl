@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
+    xmlns:controls="clr-namespace:ToolkitPopupCustomControl.Controls"
+    x:Class="ToolkitPopupCustomControl.Popup1"
+    Size="300,600">
+    <Grid Margin="5">
+        <controls:BorderButtonView Text="Random"
+                              Command="{Binding TestCommand}" />
+        <controls:BorderButtonView Text="Clear"
+                              Command="{Binding TestCommand}" />
+        <Border Padding="0" 
+                    Margin="0"
+                    StyleClass="borderButton"
+                    WidthRequest="65"
+                    HeightRequest="65">
+            <Grid 
+                        RowDefinitions="Auto,*" 
+                        ColumnDefinitions="*"
+                        Padding="8">
+                <Label Grid.Row="0"
+                        Padding="0"
+                        Margin="0"
+                        FontSize="12"
+                        Text="Add"
+                        VerticalTextAlignment="Start"
+                        HorizontalTextAlignment="Center">
+                </Label>
+            </Grid>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TestCommand}"/>
+            </Border.GestureRecognizers>
+        </Border>
+    </Grid>
+</toolkit:Popup>
